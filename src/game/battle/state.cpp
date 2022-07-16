@@ -4,7 +4,10 @@
 #include "game/board/path.hpp"
 
 
-namespace game { terrain_t battle::terrain = FOREST; }
+namespace game::battle {
+    terrain_t terrain = FOREST;
+    SDL_Texture* background = nullptr;
+}
 
 using game::board::pawn;
 

@@ -40,23 +40,6 @@ SDL_Texture* game::texture(string const& query)
     return nullptr;
 }
 
-
-SDL_Texture* game::texture(terrain_t biome)
-{
-    switch(biome) {
-        case FOREST:
-            return texture("assets/arena/forest.png");
-        case MEADOW:
-            return texture("assets/arena/meadow.png");
-        case BEACH:
-            return texture("assets/arena/beach.png");
-
-        default:
-            return nullptr;
-    }
-}
-
-
 Point game::texture_size(string const& query)
 {
 
@@ -73,3 +56,35 @@ Point game::texture_size(string const& query)
 
     return {0, 0};
 }
+
+
+SDL_Texture* game::texture(terrain_t biome)
+{
+    switch(biome) {
+    case FOREST:
+        return texture("assets/arena/forest.png");
+    case MEADOW:
+        return texture("assets/arena/meadow.png");
+    case BEACH:
+        return texture("assets/arena/beach.png");
+
+    default:
+        return nullptr;
+    }
+}
+
+Point game::texture_size(terrain_t biome)
+{
+    switch(biome) {
+    case FOREST:
+        return texture_size("assets/arena/forest.png");
+    case MEADOW:
+        return texture_size("assets/arena/meadow.png");
+    case BEACH:
+        return texture_size("assets/arena/beach.png");
+
+    default:
+        return {0, 0};
+    }
+}
+

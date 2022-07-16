@@ -25,6 +25,9 @@ void game::handle_event(SDL_MouseMotionEvent& ev)
         case SCENE_BOARD:
             board::motion(ev.x, ev.y);
             break;
+        case SCENE_BATTLE:
+            battle::motion(ev.x, ev.y);
+            break;
         default:
             break;
     }

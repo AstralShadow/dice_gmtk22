@@ -4,6 +4,7 @@
 #include "game/camera.hpp"
 #include "game/textures.hpp"
 #include "game/board/private.hpp"
+#include "game/battle/state.hpp"
 
 #include <iostream>
 #include <string>
@@ -30,6 +31,7 @@ namespace game
 void game::init(int, char**)
 {
     load_textures();
+    battle::load_battle();
 }
 
 void game::load_textures()

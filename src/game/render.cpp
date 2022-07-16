@@ -13,6 +13,8 @@ using std::endl;
 
 void game::render()
 {
+    SDL_RenderClear(core::renderer);
+
     cameras_to_screen_size();
 
     switch(scene) {

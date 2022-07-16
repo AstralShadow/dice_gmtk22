@@ -14,7 +14,7 @@ namespace game::battle
     const Point margin {30, 30};
 
     extern terrain_t terrain;
-    SDL_Texture* background;
+    extern SDL_Texture* background;
 
     void load_battle();
     void unload_battle();

@@ -1,6 +1,8 @@
 #ifndef INCLUDE_TERRAIN_HPP
 #define INCLUDE_TERRAIN_HPP
 
+#include "utils/point.hpp"
+
 struct SDL_Texture;
 
 namespace game
@@ -13,6 +15,7 @@ namespace game
     };
 
     SDL_Texture* texture(terrain_t);
+    Point texture_size(terrain_t);
 }
 
 #endif // INCLUDE_TERRAIN_HPP

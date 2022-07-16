@@ -25,6 +25,7 @@ namespace game
     namespace battle {
         void tick(u32);
         void render();
+        void motion(u32 x, u32 y);
     }
 
     template<typename T>

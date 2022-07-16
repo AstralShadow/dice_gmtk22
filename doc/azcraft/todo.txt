@@ -5,10 +5,9 @@
 2022-07-16 animated players
 2022-07-16 smooth camera motion
 2022-07-16 implement path as beizer curves
-2022-07-16 git commit messages timer:0h-5m-11s
-2022-07-16 player entity
+2022-07-16 git commit messages timer:0h-6m-8s
+2022-07-16 player entity timer:0h-0m-2s
 2022-07-16 crystal entities
-2022-07-16 arena background timer:0h-2m-0s
 x 2022-07-15 2022-07-15 plan basic game design timer:0h-11m-27s
 x 2022-07-15 2022-07-15 define graphic formats timer:0h-3m-48s
 x 2022-07-15 2022-07-15 prepare engine timer:0h-23m-27s
@@ -23,3 +22,4 @@ x 2022-07-16 2022-07-16 bake crystal spritesheets timer:0h-15m-0s
 x 2022-07-16 2022-07-16 move board camera to board namespace timer:0h-13m-11s
 x 2022-07-16 2022-07-16 battle scene timer:1h-7m-7s
 x 2022-07-16 2022-07-16 loading and unloading battle mode timer:0h-13m-9s
+x 2022-07-16 2022-07-16 arena background timer:0h-11m-16s
