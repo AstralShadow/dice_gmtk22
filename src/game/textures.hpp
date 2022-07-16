@@ -31,6 +31,9 @@ namespace game
         TX_PAWN "yellow.png",
         TX_PAWN "orange.png",
         TX_PAWN "red.png",
+        "assets/arena/forest.png",
+        "assets/arena/meadow.png",
+        "assets/arena/beach.png"
     };
 
     extern std::vector<SDL_Surface*> surfaces;

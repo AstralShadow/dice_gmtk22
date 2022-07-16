@@ -6,7 +6,7 @@
 2022-07-16 smooth camera motion
 2022-07-16 implement path as beizer curves
 2022-07-16 git commit messages timer:0h-5m-11s
-2022-07-16 battle scene timer:0h-40m-23s
+2022-07-16 battle scene timer:0h-50m-13s
 2022-07-16 player entity
 2022-07-16 crystal entities
 x 2022-07-15 2022-07-15 plan basic game design timer:0h-11m-27s

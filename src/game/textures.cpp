@@ -1,5 +1,6 @@
 #include "utils/types.hpp"
 #include "game/textures.hpp"
+#include "game/terrain.hpp"
 #include <string>
 #include <iostream>
 #include <SDL_render.h>
@@ -38,6 +39,23 @@ SDL_Texture* game::texture(string const& query)
 
     return nullptr;
 }
+
+
+SDL_Texture* game::texture(terrain_t biome)
+{
+    switch(biome) {
+        case FOREST:
+            return texture("assets/arena/forest.png");
+        case MEADOW:
+            return texture("assets/arena/meadow.png");
+        case BEACH:
+            return texture("assets/arena/beach.png");
+
+        default:
+            return nullptr;
+    }
+}
+
 
 Point game::texture_size(string const& query)
 {
