@@ -1,5 +1,5 @@
 2022-07-15 player timer:0h-3m-20s
-2022-07-15 map timer:1h-45m-58s
+2022-07-15 map timer:1h-49m-59s
 2022-07-15 the dice
 2022-07-15 different attack models
 2022-07-16 animated players

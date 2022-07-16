@@ -19,6 +19,8 @@ namespace game
 
     template<typename T>
     extern void handle_event(T&);
+
+    void board_on_motion(u32 x, u32 y);
 }
 
 #endif // INCLUDE_GAME_HPP

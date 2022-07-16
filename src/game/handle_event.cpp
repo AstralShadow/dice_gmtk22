@@ -1,5 +1,6 @@
 #include "core/core.hpp"
 #include "game/game.hpp"
+#include "game/data.hpp"
 #include <SDL2/SDL_events.h>
 
 
@@ -18,9 +19,15 @@ void game::handle_event(SDL_MouseButtonEvent&)
 }
 
 template<>
-void game::handle_event(SDL_MouseMotionEvent&)
+void game::handle_event(SDL_MouseMotionEvent& ev)
 {
-
+    switch(scene) {
+        case SCENE_BOARD:
+            board_on_motion(ev.x, ev.y);
+            break;
+        default:
+            break;
+    }
 }
 
 template<>

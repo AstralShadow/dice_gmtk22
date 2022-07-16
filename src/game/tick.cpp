@@ -16,13 +16,11 @@ void game::tick(u32 ms)
 {
     switch(scene) {
     case SCENE_MENU:
-        //menu_tick(ms);
-        cout << "Menu not implemented" << endl;
+        menu_tick(ms);
         break;
 
     case SCENE_BOARD:
         board_tick(ms);
-        cout << "Board not implemented" << endl;
         break;
 
     case SCENE_BATTLE:
