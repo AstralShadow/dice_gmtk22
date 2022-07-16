@@ -1,0 +1,11 @@
+2022-07-15 player timer:0h-3m-20s
+2022-07-15 map timer:1h-45m-58s
+2022-07-15 the dice
+2022-07-15 different attack models
+2022-07-16 animated players
+x 2022-07-15 2022-07-15 plan basic game design timer:0h-11m-27s
+x 2022-07-15 2022-07-15 define graphic formats timer:0h-3m-48s
+x 2022-07-15 2022-07-15 prepare engine timer:0h-23m-27s
+x 2022-07-15 2022-07-15 git repo timer:0h-17m-59s
+x 2022-07-16 2022-07-15 game scenes? timer:1h-32m-4s
+x 2022-07-16 2022-07-15 camera
