@@ -14,6 +14,8 @@ void game::battle::render()
 {
     render_background();
     render_player();
+
+    render_hud();
 }
 
 // TODO: entities disappearing when leaving fullscreen

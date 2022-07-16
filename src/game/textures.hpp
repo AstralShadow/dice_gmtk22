@@ -33,7 +33,11 @@ namespace game
         TX_PAWN "red.png",
         "assets/arena/forest.png",
         "assets/arena/meadow.png",
-        "assets/arena/beach.png"
+        "assets/arena/beach.png",
+#define HUD_DICE "assets/hud/dice.png"
+        HUD_DICE,
+#define HUD_DICE_EMPTY "assets/hud/dice_empty.png"
+        HUD_DICE_EMPTY
     };
 
     extern std::vector<SDL_Surface*> surfaces;

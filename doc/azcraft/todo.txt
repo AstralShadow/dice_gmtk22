@@ -5,7 +5,7 @@
 2022-07-16 animated players
 2022-07-16 smooth camera motion
 2022-07-16 implement path as beizer curves
-2022-07-16 git commit messages timer:0h-8m-3s
+2022-07-16 git commit messages timer:0h-13m-1s
 2022-07-16 crystal entities
 2022-07-16 player attack?
 x 2022-07-15 2022-07-15 plan basic game design timer:0h-11m-27s
@@ -26,3 +26,4 @@ x 2022-07-16 2022-07-16 arena background timer:0h-11m-16s
 x 2022-07-16 2022-07-16 render entities timer:0h-44m-55s
 x 2022-07-16 2022-07-16 player controls timer:0h-30m-3s
 x 2022-07-16 2022-07-16 player rush timer:0h-24m-7s
+x 2022-07-17 2022-07-17 hud timer:0h-22m-1s
