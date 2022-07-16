@@ -9,7 +9,7 @@ init_point = svg.find("d=\"M ", path_el)
 init_point += len("d=\"M ")
 end_point = svg.find("\" />", init_point)
 
-content = svg[init_point : end_point - init_point]
+content = svg[init_point : end_point]
 
 file = open("output.txt", "w")
 file.write(content)
