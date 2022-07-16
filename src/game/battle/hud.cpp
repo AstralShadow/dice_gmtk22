@@ -22,9 +22,10 @@ void game::battle::render_energy()
     auto empty = texture(HUD_DICE_EMPTY);
     auto size = texture_size(HUD_DICE);
     auto step = size.x + 6;
+    auto screen = camera.size;
 
     SDL_Rect dst{
-        24, 24,
+        screen.x - 24 - size.x, 24,
         size.x, size.y
     };
 
@@ -46,7 +47,7 @@ void game::battle::render_energy()
 
         dst.y = 24;
         dst.h = size.y;
-        dst.x += step;
+        dst.x -= step;
     }
 
 }
