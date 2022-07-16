@@ -9,7 +9,6 @@ namespace game
         SCENE_BATTLE
     } extern scene;
 
-
 }
 
 #endif // INCLUDE_DATA_HPP
