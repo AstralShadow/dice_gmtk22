@@ -23,7 +23,7 @@ void game::handle_event(SDL_MouseMotionEvent& ev)
 {
     switch(scene) {
         case SCENE_BOARD:
-            board_on_motion(ev.x, ev.y);
+            board::motion(ev.x, ev.y);
             break;
         default:
             break;

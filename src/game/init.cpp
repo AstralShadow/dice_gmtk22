@@ -21,7 +21,8 @@ namespace game
     scene_t scene = SCENE_BOARD;
     vector<SDL_Surface*> surfaces;
     vector<SDL_Texture*> textures;
-    Camera board_camera;
+
+    Camera board::camera;
 }
 
 

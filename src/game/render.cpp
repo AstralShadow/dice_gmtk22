@@ -17,15 +17,15 @@ void game::render()
 
     switch(scene) {
     case SCENE_MENU:
-        menu_render();
+        menu::render();
         break;
 
     case SCENE_BOARD:
-        board_render();
+        board::render();
         break;
 
     case SCENE_BATTLE:
-        //cout << "Battle not implemented" << endl;
+        battle::render();
         break;
     }
 

@@ -17,7 +17,9 @@ namespace game
         void tick(u32 ms);
     };
 
-    extern Camera board_camera;
+    namespace board {
+        extern Camera camera;
+    }
 
     void cameras_to_screen_size();
 }

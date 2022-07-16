@@ -1,6 +1,6 @@
 #include "game/game.hpp"
 
-void game::menu::tick(u32)
+void game::battle::tick(u32)
 {
 
 }

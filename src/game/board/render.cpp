@@ -8,10 +8,10 @@
 #include <SDL2/SDL_render.h>
 
 
-void game::board_render()
+void game::board::render()
 {
-    board::render_background();
-    board::render_pawn();
+    render_background();
+    render_pawn();
 }
 
 void game::board::render_pawn()
@@ -19,8 +19,8 @@ void game::board::render_pawn()
     auto rnd = core::renderer;
     auto size = game::texture_size(TX_PAWN "lime.png");
     auto pos = path_pos(player.progress);
-    auto offset = game::board_camera.pos;
-    auto scale = game::board_camera.scale;
+    auto offset = camera.pos;
+    auto scale = camera.scale;
 
     SDL_Rect out {
         static_cast<int>(pos.x * scale - offset.x),

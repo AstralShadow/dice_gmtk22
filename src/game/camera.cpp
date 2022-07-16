@@ -20,7 +20,7 @@ void Camera::tick(u32)
 void game::cameras_to_screen_size()
 {
     std::array camera_list {
-        &board_camera
+        &board::camera
     };
 
     for(auto camera : camera_list) {

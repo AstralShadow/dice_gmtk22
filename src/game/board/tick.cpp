@@ -9,11 +9,10 @@ using std::cout;
 using std::endl;
 
 
-void game::board_tick(u32 ms)
+void game::board::tick(u32 ms)
 {
-    board_camera.tick(ms);
-    board::player.progress += 0.001; 
-    if(board::player.progress > 1)
-        board::player.progress = 0.7;
-    cout << board::player.progress << endl;
+    camera.tick(ms);
+    player.progress += 0.001; 
+    if(player.progress > 1)
+        player.progress = 0.7;
 }

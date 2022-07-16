@@ -10,8 +10,9 @@ FILE(GLOB SOURCES
         src/core/*.cpp
         src/utils/*.cpp
         src/game/*.cpp
-        src/game/board/*.cpp
         src/game/menu/*.cpp
+        src/game/board/*.cpp
+        src/game/battle/*.cpp
 )
 include_directories(${PROJECT_NAME} src)
 add_executable(${PROJECT_NAME} ${SOURCES})

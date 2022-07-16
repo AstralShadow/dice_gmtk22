@@ -18,12 +18,12 @@ Point board::map_size {0, 0};
 void board::render_background()
 {
     auto rnd = core::renderer;
-    auto screen = board_camera.size;
+    auto screen = camera.size;
     board::calculate_map_size();
 
     SDL_Rect src {
-        static_cast<int>(board_camera.pos.x),
-        static_cast<int>(board_camera.pos.y),
+        static_cast<int>(camera.pos.x),
+        static_cast<int>(camera.pos.y),
         screen.x,
         screen.y
     };
@@ -82,17 +82,16 @@ SDL_Texture* game::board::map_cache()
 void game::board::calculate_map_size()
 {
     static Point screen_cache {0, 0};
-    auto screen = game::board_camera.size;
+    auto screen = camera.size;
     if(screen_cache == screen)
         return;
     screen_cache = screen;
 
-    using game::board::camera_margin;
     screen.x += camera_margin.x;
     screen.y += camera_margin.y;
     auto original = game::texture_size(TEXTURE_MAP);
     map_size = cover(original, screen);
-    game::board_camera.scale =
+    camera.scale =
         static_cast<float>(map_size.x) / original.x;
 }
 
