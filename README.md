@@ -12,6 +12,7 @@ You basicly want to do:
     cd build
     cmake ..
     make -j$(nproc)
+    cp -r ../assets .
     ./dice
 
 That would lead to nothing because this commit

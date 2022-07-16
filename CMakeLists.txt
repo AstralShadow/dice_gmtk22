@@ -10,6 +10,8 @@ FILE(GLOB SOURCES
         src/core/*.cpp
         src/utils/*.cpp
         src/game/*.cpp
+        src/game/board/*.cpp
+        src/game/menu/*.cpp
 )
 include_directories(${PROJECT_NAME} src)
 add_executable(${PROJECT_NAME} ${SOURCES})
@@ -40,12 +42,17 @@ target_include_directories( ${PROJECT_NAME} PUBLIC
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED on)
 
+target_compile_options(${PROJECT_NAME} PUBLIC -O2)
+
 target_compile_options(${PROJECT_NAME} PRIVATE
         -Wall
         -Wextra
         -pedantic
         -Werror
+        #-Og -g
+        -O2
 )
+
 
 
 ### DEPENDENCIES ###
