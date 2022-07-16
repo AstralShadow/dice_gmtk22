@@ -4,7 +4,7 @@
 using game::board::Pawn;
 using game::texture;
 
-Pawn game::board::player;
+Pawn game::board::pawn;
 
 SDL_Texture* game::board::get_texture(Pawn const& pawn)
 {

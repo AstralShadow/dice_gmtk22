@@ -18,7 +18,7 @@ void game::board::render_pawn()
 {
     auto rnd = core::renderer;
     auto size = game::texture_size(TX_PAWN "lime.png");
-    auto pos = path_pos(player.progress);
+    auto pos = path_pos(pawn.progress);
     auto offset = camera.pos;
     auto scale = camera.scale;
 
@@ -31,6 +31,6 @@ void game::board::render_pawn()
     out.x -= out.w / 2;
     out.y -= out.h;
 
-    auto tx = get_texture(player);
+    auto tx = get_texture(pawn);
     SDL_RenderCopy(rnd, tx, nullptr, &out);
 }

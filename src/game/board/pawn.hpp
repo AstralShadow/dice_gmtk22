@@ -15,7 +15,7 @@ namespace game::board
         int hp = 3;
     };
 
-    extern Pawn player;
+    extern Pawn pawn;
     SDL_Texture* get_texture(Pawn const&);
     void render_pawn();
 }

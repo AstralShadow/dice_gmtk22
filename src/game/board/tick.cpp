@@ -12,7 +12,7 @@ using std::endl;
 void game::board::tick(u32 ms)
 {
     camera.tick(ms);
-    player.progress += 0.001; 
-    if(player.progress > 1)
-        player.progress = 0.7;
+    pawn.progress += 0.001; 
+    if(pawn.progress > 1)
+        pawn.progress = 0.7;
 }
