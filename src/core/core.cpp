@@ -21,7 +21,7 @@ void core::run()
         buffer += now - last;
         u32 raw = buffer / freq;
 
-        if(raw > 7) {
+        if(raw > 1) {
             core::poll_events();
             game::tick(raw);
             buffer -= raw * freq;
