@@ -18,9 +18,11 @@ void game::battle::load_battle()
     background = texture(terrain);
     auto size = texture_size(terrain);
 
-    player.hp = pawn.hp;
+    player = Player{};
     player.pos.x = size.x / 2;
     player.pos.y = size.y * 3 / 4;
+    player.hp = pawn.hp;
+
     game::scene = SCENE_BATTLE;
 }
 

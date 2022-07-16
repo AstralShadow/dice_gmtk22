@@ -3,6 +3,8 @@
 
 #include "utils/types.hpp"
 
+struct SDL_KeyboardEvent;
+
 namespace game
 {
     void init(int, char**);
@@ -26,6 +28,9 @@ namespace game
         void tick(u32);
         void render();
         void motion(u32 x, u32 y);
+        void keyboard(SDL_KeyboardEvent&);
+        void rclick(u32 x, u32 y);
+        void lclick(u32 x, u32 y);
     }
 
     template<typename T>

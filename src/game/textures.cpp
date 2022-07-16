@@ -1,6 +1,7 @@
 #include "utils/types.hpp"
 #include "game/textures.hpp"
 #include "game/terrain.hpp"
+#include "game/battle/player.hpp"
 #include <string>
 #include <iostream>
 #include <SDL_render.h>
@@ -88,3 +89,35 @@ Point game::texture_size(terrain_t biome)
     }
 }
 
+
+SDL_Texture* game::texture(battle::Player const& player)
+{
+    switch(player.hp) {
+    case 3:
+        return texture(TX_PLAYER "lime.png");
+    case 2:
+        return texture(TX_PLAYER "yellow.png");
+    case 1:
+        return texture(TX_PLAYER "orange.png");
+    case 0:
+        return texture(TX_PLAYER "red.png");
+    }
+
+    return nullptr;
+}
+
+Point game::texture_size(battle::Player const& player)
+{
+    switch(player.hp) {
+    case 3:
+        return texture_size(TX_PLAYER "lime.png");
+    case 2:
+        return texture_size(TX_PLAYER "yellow.png");
+    case 1:
+        return texture_size(TX_PLAYER "orange.png");
+    case 0:
+        return texture_size(TX_PLAYER "red.png");
+    }
+
+    return {0, 0};
+}
