@@ -19,12 +19,13 @@ void core::run()
     while(running) {
         u64 now = SDL_GetPerformanceCounter();
         buffer += now - last;
-        u32 raw = buffer / freq;
+        u32 raw = buffer * 1000 / freq;
+        last = now;
 
         if(raw > 1) {
             core::poll_events();
             game::tick(raw);
-            buffer -= raw * freq;
+            buffer -= raw * freq / 1000;
         }
 
         game::render();
