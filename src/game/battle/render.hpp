@@ -1,6 +1,8 @@
 #ifndef INCLUDE_RENDER_HPP
 #define INCLUDE_RENDER_HPP
 
+#include "utils/point.hpp"
+
 struct SDL_Texture;
 struct SDL_Rect;
 
@@ -14,6 +16,9 @@ namespace game::battle
     void render_player();
     void render_enemies();
     void render_bullets();
+
+    /** Transforms sceen coordinate to game coordinate */
+    FPoint localize(FPoint);
 }
 
 #endif // INCLUDE_RENDER_HPP

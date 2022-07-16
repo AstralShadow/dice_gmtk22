@@ -25,8 +25,8 @@ void game::battle::render_player()
     auto size = texture_size(player);
 
     SDL_Rect area {
-        player.pos.x,
-        player.pos.y,
+        static_cast<int>(player.pos.x),
+        static_cast<int>(player.pos.y),
         size.x, size.y
     };
 
@@ -51,4 +51,22 @@ render_entity(SDL_Texture* tx, SDL_Rect const& area)
         out.y = area.y + (screen.y - arena.y) / 2;
 
     SDL_RenderCopy(rnd, tx, nullptr, &out);
+}
+
+FPoint game::battle::localize(FPoint in)
+{
+    auto screen = camera.size;
+    auto arena = texture_size(terrain);
+
+    FPoint out {
+        in.x + camera.pos.x,
+        in.y + camera.pos.y,
+    };
+
+    if(screen.x > arena.x)
+        out.x = in.x - (screen.x - arena.x) / 2;
+    if(screen.y > arena.y)
+        out.y = in.y - (screen.y - arena.y) / 2;
+
+    return out;
 }
