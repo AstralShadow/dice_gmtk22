@@ -21,6 +21,10 @@ namespace game
         extern Camera camera;
     }
 
+    namespace battle {
+        extern Camera camera;
+    }
+
     void cameras_to_screen_size();
 }
 

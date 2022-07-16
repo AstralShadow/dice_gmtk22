@@ -18,11 +18,12 @@ using std::vector;
 
 namespace game
 {
-    scene_t scene = SCENE_BOARD;
+    scene_t scene = SCENE_BATTLE;
     vector<SDL_Surface*> surfaces;
     vector<SDL_Texture*> textures;
 
     Camera board::camera;
+    Camera battle::camera;
 }
 
 

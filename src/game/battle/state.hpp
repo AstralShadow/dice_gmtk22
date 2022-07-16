@@ -4,13 +4,20 @@
 #include "utils/types.hpp"
 #include "utils/point.hpp"
 #include "game/terrain.hpp"
+#include "game/battle/player.hpp"
+
+struct SDL_Texture;
 
 namespace game::battle
 {
-    extern terrain_t terrain;
-
     [[maybe_unused]]
     const Point margin {30, 30};
+
+    extern terrain_t terrain;
+    SDL_Texture* background;
+
+    void load_battle();
+    void unload_battle();
 }
 
 #endif // INCLUDE_STATE_HPP
