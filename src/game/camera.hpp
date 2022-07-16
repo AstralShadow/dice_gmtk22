@@ -12,6 +12,7 @@ namespace game
         FPoint motion {0, 0};
         FPoint target_pos {0, 0};
         Point size {0, 0};
+        float scale = 1.0f;
 
         void tick(u32 ms);
     };

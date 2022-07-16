@@ -6,10 +6,14 @@
 #include <SDL2/SDL_rect.h>
 #include <SDL2/SDL_render.h>
 #include <SDL2/SDL_image.h>
+#include <iostream>
 
 namespace board = game::board;
+using std::cout;
+using std::endl;
 
 Point board::map_size {0, 0};
+
 
 void board::render_background()
 {
@@ -86,8 +90,10 @@ void game::board::calculate_map_size()
     using game::board::camera_margin;
     screen.x += camera_margin.x;
     screen.y += camera_margin.y;
-    map_size = cover(game::texture_size(TEXTURE_MAP),
-                     screen);
+    auto original = game::texture_size(TEXTURE_MAP);
+    map_size = cover(original, screen);
+    game::board_camera.scale =
+        static_cast<float>(map_size.x) / original.x;
 }
 
 Point game::board::cover(Point source, Point target)

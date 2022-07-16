@@ -4,13 +4,15 @@
 #include "utils/types.hpp"
 #include "utils/point.hpp"
 #include <array>
+#include <utility>
 #include <cmath>
 
 
 namespace game::board
 {
-    [[maybe_unused]]
-    const std::array<FPoint, 127> path {
+
+[[maybe_unused]]
+const std::array<FPoint, 148> path {
     FPoint{118.00,280.00},
     {128.00,292.00},{154.00,308.67},{165.33,316.67},
     {176.67,324.67},{204.67,347.33},{213.33,353.33},
@@ -53,24 +55,56 @@ namespace game::board
     {192.50,707.00},{201.00,767.50},{216.50,791.50},
     {232.00,815.50},{266.50,847.50},{292.50,860.50},
     {318.50,873.50},{344.00,904.50},{385.50,912.00},
-    {427.00,919.50},{495.50,915.50},{527.00,907.50}
-    };
+    {427.00,919.50},{495.50,915.50},{527.00,907.50},
+    {558.50,899.50},{637.50,856.50},{658.00,839.00},
+    {678.50,821.50},{728.00,782.50},{763.00,774.00},
+    {798.00,765.50},{819.50,765.50},{832.00,780.50},
+    {844.50,795.50},{868.00,831.50},{881.50,862.50},
+    {895.00,893.50},{915.50,927.00},{933.50,956.00},
+    {951.50,985.00},{967.50,1020.50},{992.50,1040.00},
+    {1017.50,1059.50},{1064.00,1082.50},{1093.50,1092.50}
+};
 
-    [[maybe_unused]]
-    constexpr float path_length()
-    {
-        FPoint pos = path[0];
-        float length = 0;
-        for(u32 i = 1; i < path.size(); ++i) {
-            FPoint next = path[i];
-            length += std::hypot(
-                next.x - pos.x,
-                next.y - pos.y
-            );
-            pos = next;
-        }
-        return length;
+enum terrain_t
+{
+    FOREST,
+    MEADOW,
+    BEACH
+};
+
+
+typedef std::pair<float, terrain_t> terrain_data_t;
+[[maybe_unused]]
+const std::array<terrain_data_t, 7> terrain_data {
+    terrain_data_t{0, FOREST},
+    {0.3, MEADOW},
+    {0.64, FOREST},
+    {0.72, MEADOW},
+    {0.74, BEACH},
+    {0.87, MEADOW},
+    {0.95, BEACH}
+};
+
+
+[[maybe_unused]]
+constexpr float path_length()
+{
+    FPoint pos = path[0];
+    float length = 0;
+    for(u32 i = 1; i < path.size(); ++i) {
+        FPoint next = path[i];
+        length += std::hypot(
+            next.x - pos.x,
+            next.y - pos.y
+        );
+        pos = next;
     }
+    return length;
+}
+
+extern FPoint path_pos(float progress); // [-1, 1]
+extern terrain_t path_biome(float progress);
+
 }
 
 #endif // INCLUDE_PATH_HPP
