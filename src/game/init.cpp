@@ -19,7 +19,7 @@ using std::vector;
 
 namespace game
 {
-    scene_t scene = SCENE_BATTLE;
+    scene_t scene = SCENE_BOARD;
     vector<SDL_Surface*> surfaces;
     vector<SDL_Texture*> textures;
 

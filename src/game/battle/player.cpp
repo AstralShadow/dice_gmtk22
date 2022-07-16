@@ -8,13 +8,13 @@ namespace game::battle {
 }
 
 
-SDL_Texture* game::battle::player_texture()
+SDL_Texture* game::texture(battle::Player const& player)
 {
     switch(player.hp) {
     case 3:
         return texture(TX_PLAYER "lime.png");
     case 2:
-        return texture(TX_PLAYER  "yellow.png");
+        return texture(TX_PLAYER "yellow.png");
     case 1:
         return texture(TX_PLAYER "orange.png");
     case 0:
@@ -22,4 +22,20 @@ SDL_Texture* game::battle::player_texture()
     }
 
     return nullptr;
+}
+
+Point game::texture_size(battle::Player const& player)
+{
+    switch(player.hp) {
+    case 3:
+        return texture_size(TX_PLAYER "lime.png");
+    case 2:
+        return texture_size(TX_PLAYER "yellow.png");
+    case 1:
+        return texture_size(TX_PLAYER "orange.png");
+    case 0:
+        return texture_size(TX_PLAYER "red.png");
+    }
+
+    return {0, 0};
 }

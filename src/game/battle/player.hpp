@@ -10,12 +10,17 @@ namespace game::battle
 {
     struct Player
     {
-        Point pos;
+        Point pos {0, 0};
         int hp = 3;
     };
     extern Player player;
 
-    SDL_Texture* player_texture();
+}
+
+namespace game
+{
+    SDL_Texture* texture(battle::Player const&);
+    Point texture_size(battle::Player const&);
 }
 
 #endif // INCLUDE_PLAYER_HPP

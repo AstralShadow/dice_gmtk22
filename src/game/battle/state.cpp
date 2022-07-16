@@ -16,8 +16,11 @@ void game::battle::load_battle()
 {
     terrain = game::board::path_biome(pawn.progress);
     background = texture(terrain);
+    auto size = texture_size(terrain);
 
     player.hp = pawn.hp;
+    player.pos.x = size.x / 2;
+    player.pos.y = size.y * 3 / 4;
     game::scene = SCENE_BATTLE;
 }
 
