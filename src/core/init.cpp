@@ -1,6 +1,6 @@
 #include "core/init.hpp"
 #include "core/core.hpp"
-#include "core/game.hpp"
+#include "game/game.hpp"
 #include "core/config.hpp"
 #include <stdexcept>
 #include <string>

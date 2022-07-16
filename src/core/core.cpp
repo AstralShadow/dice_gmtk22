@@ -1,6 +1,7 @@
 #include "core/core.hpp"
-#include "core/game.hpp"
+#include "game/game.hpp"
 #include <SDL2/SDL_events.h>
+#include <SDL2/SDL_timer.h>
 
 SDL_Window* core::window = nullptr;
 SDL_Renderer* core::renderer = nullptr;
@@ -11,10 +12,21 @@ static bool running = false;
 void core::run()
 {
     running = true;
+    u64 last = SDL_GetPerformanceCounter();
+    u64 freq = SDL_GetPerformanceFrequency();
+    float buffer = 0;
     
     while(running) {
-        core::poll_events();
-        game::tick();
+        u64 now = SDL_GetPerformanceCounter();
+        buffer += now - last;
+        u32 raw = buffer / freq;
+
+        if(raw > 7) {
+            core::poll_events();
+            game::tick(raw);
+            buffer -= raw * freq;
+        }
+
         game::render();
     }
 }

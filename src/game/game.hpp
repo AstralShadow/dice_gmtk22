@@ -3,13 +3,19 @@
 
 #include "utils/types.hpp"
 
-
 namespace game
 {
     void init(int, char**);
 
-    void tick();
+    void tick(u32 ms);
+    void menu_tick(u32);
+    void board_tick(u32);
+    void battle_tick(u32);
+
     void render();
+    void menu_render();
+    void board_render();
+    void battle_render();
 
     template<typename T>
     extern void handle_event(T&);
