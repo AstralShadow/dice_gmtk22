@@ -1,4 +1,4 @@
-2022-07-16 create steps on path
+2022-07-16 create steps on path timer:0h-9m-14s
 2022-07-16 move pawn accorgind map path timer:0h-16m-17s
 2022-07-15 the dice
 2022-07-15 different attack models
@@ -6,7 +6,7 @@
 2022-07-16 smooth camera motion
 2022-07-16 implement path as beizer curves
 2022-07-16 move board camera to board namespace
-2022-07-16 git commit messages timer:0h-2m-0s
+2022-07-16 git commit messages timer:0h-3m-1s
 x 2022-07-15 2022-07-15 plan basic game design timer:0h-11m-27s
 x 2022-07-15 2022-07-15 define graphic formats timer:0h-3m-48s
 x 2022-07-15 2022-07-15 prepare engine timer:0h-23m-27s
@@ -17,3 +17,4 @@ x 2022-07-16 2022-07-15 render map timer:2h-19m-41s
 x 2022-07-16 2022-07-16 import map path timer:0h-31m-57s
 x 2022-07-16 2022-07-15 player on board timer:1h-29m-11s
 x 2022-07-16 2022-07-16 add biome zones on path timer:0h-15m-59s
+x 2022-07-16 2022-07-16 bake crystal spritesheets timer:0h-15m-0s
