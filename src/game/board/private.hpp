@@ -2,6 +2,7 @@
 #define INCLUDE_PRIVATE_BOARD_HPP
 
 #include "utils/point.hpp"
+#include "game/board/path.hpp"
 
 struct SDL_Texture;
 
@@ -14,6 +15,7 @@ namespace game::board
     const FPoint camera_margin {50, 50};
 
 
+    void render_background();
     void calculate_map_size();
     SDL_Texture* map_cache();
     Point cover(Point source, Point output);

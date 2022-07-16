@@ -3,7 +3,7 @@
 #include "game/data.hpp"
 #include "game/camera.hpp"
 #include "game/textures.hpp"
-#include "game/private_board.hpp"
+#include "game/board/private.hpp"
 
 #include <iostream>
 #include <string>

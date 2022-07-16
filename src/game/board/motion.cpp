@@ -1,6 +1,6 @@
 #include "game/game.hpp"
 #include "game/camera.hpp"
-#include "game/private_board.hpp"
+#include "game/board/private.hpp"
 
 void game::board_on_motion(u32 x, u32 y)
 {
