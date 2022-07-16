@@ -16,6 +16,21 @@ namespace game
     std::array const texture_paths {
 #define TEXTURE_MAP "assets/map.png"
         TEXTURE_MAP,
+
+#define TX_PRINCESS "assets/princess.png"
+        TX_PRINCESS,
+#define TX_PRINCE "assets/prince.png"
+        TX_PRINCE,
+#define TX_PLAYER "assets/player/"
+        TX_PLAYER "lime.png",
+        TX_PLAYER "yellow.png",
+        TX_PLAYER "orange.png",
+        TX_PLAYER "red.png",
+#define TX_PAWN "assets/pawn/"
+        TX_PAWN "lime.png",
+        TX_PAWN "yellow.png",
+        TX_PAWN "orange.png",
+        TX_PAWN "red.png",
     };
 
     extern std::vector<SDL_Surface*> surfaces;
