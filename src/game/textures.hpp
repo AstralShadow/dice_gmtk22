@@ -55,6 +55,11 @@ namespace game
         TX_BULLET "darkness.png",
         TX_BULLET "fire.png",
         TX_BULLET "ice.png",
+
+#define HUD_PROGRESS_FULL "assets/hud/progress_bar_full.png"
+        HUD_PROGRESS_FULL,
+#define HUD_PROGRESS_EMPTY "assets/hud/progress_bar_empty.png"
+        HUD_PROGRESS_EMPTY,
     };
 
     extern std::vector<SDL_Surface*> surfaces;

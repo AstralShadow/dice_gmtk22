@@ -180,7 +180,7 @@ void game::battle::tick_crystal(Crystal& obj, u32 ms)
 
     obj.frame += crystal_animation_speed * ms/1000;
     if(obj.frame >= healthy_crystal_frame_limiter)
-        obj.frame *= -1;
+        obj.frame = obj.frame * -1 - 0.9;
 }
 
 game::battle::Bullet*

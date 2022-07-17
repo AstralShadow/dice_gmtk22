@@ -18,6 +18,8 @@ namespace game::battle
     extern SDL_Texture* background;
 
     extern float lifetime; // level timer
+    [[maybe_unused]]
+    const float max_lifetime = 15.0f;
     extern float difficulty; // increase
 
     void load_battle();

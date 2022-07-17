@@ -14,6 +14,7 @@ static auto& rnd = core::renderer;
 void game::battle::render_hud()
 {
     render_energy();
+    render_lifetime();
 }
 
 void game::battle::render_energy()
@@ -24,7 +25,7 @@ void game::battle::render_energy()
     auto step = size.x + 6;
     auto screen = camera.size;
 
-    SDL_Rect dst{
+    SDL_Rect dst {
         screen.x - 24 - size.x, 24,
         size.x, size.y
     };
@@ -54,5 +55,27 @@ void game::battle::render_energy()
 
 void game::battle::render_lifetime()
 {
+    auto full = texture(HUD_PROGRESS_FULL);
+    auto empty = texture(HUD_PROGRESS_EMPTY);
+    auto size = texture_size(HUD_PROGRESS_FULL);
+
+    SDL_Rect dst {
+        24, 24,
+        size.x, size.y
+    };
+
+    SDL_RenderCopy(rnd, empty, nullptr, &dst);
+
+    float filled = lifetime / max_lifetime;
+
+    SDL_Rect src {
+        0, 0,
+        static_cast<int>(size.x * filled),
+        size.y
+    };
+
+    dst.w = src.w;
+
+    SDL_RenderCopy(rnd, full, &src, &dst);
 
 }

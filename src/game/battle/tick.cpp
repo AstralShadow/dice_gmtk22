@@ -1,8 +1,13 @@
 #include "game/game.hpp"
 #include "game/camera.hpp"
 #include "game/battle/tick.hpp"
+#include "game/battle/state.hpp"
 #include "game/battle/player.hpp"
 #include "game/battle/crystal.hpp"
+#include <iostream>
+
+using std::cout;
+using std::endl;
 
 
 void game::battle::tick(u32 ms)
@@ -10,6 +15,7 @@ void game::battle::tick(u32 ms)
     base_attack_timer += ms;
 
     lifetime -= ms / 1000.0f;
+    cout << lifetime << endl;
 
     camera.tick(ms);
     tick_player(ms);
