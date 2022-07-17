@@ -17,7 +17,7 @@ namespace game::battle
 
         /* Energy */
         float energy = 3;
-        float energy_limit = 3;
+        float energy_limit = 5;
         float recharge_rate = 0.3; // en/s
 
         /* Rushing */

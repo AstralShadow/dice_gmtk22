@@ -18,6 +18,7 @@ namespace game::battle
     extern SDL_Texture* background;
 
     extern float lifetime; // level timer
+    extern float difficulty; // increase
 
     void load_battle();
     void unload_battle();

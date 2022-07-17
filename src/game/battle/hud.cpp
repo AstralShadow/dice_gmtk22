@@ -51,3 +51,8 @@ void game::battle::render_energy()
     }
 
 }
+
+void game::battle::render_lifetime()
+{
+
+}

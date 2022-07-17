@@ -16,7 +16,8 @@ namespace game::battle
     void render_background();
     void render_entity(SDL_Texture*,
                        SDL_Rect const* src,
-                       SDL_Rect const* dst);
+                       SDL_Rect const* dst,
+                       float rotation = 0);
 
     void render_player();
     void render_crystal(Crystal const&);
@@ -24,6 +25,7 @@ namespace game::battle
 
     void render_hud();
     void render_energy();
+    void render_lifetime();
 
     /** Transforms sceen coordinate to game coordinate */
     FPoint localize(FPoint);

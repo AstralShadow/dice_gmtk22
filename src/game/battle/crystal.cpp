@@ -3,12 +3,14 @@
 #include "game/camera.hpp"
 #include "utils/random.hpp"
 #include <cmath>
+#include <algorithm>
 
 using std::abs;
 
 namespace game::battle {
     vector<Crystal> crystals;
     vector<Bullet> bullets;
+    u32 base_attack_timer = 0;
 }
 
 
@@ -95,7 +97,8 @@ void game::battle::spawn_crystal(FPoint pos)
 {
     Crystal crystal;
     auto max_frame = healthy_crystal_frame_limiter;
-    crystal.frame = random(0, max_frame);
+    crystal.frame = randomf(0, max_frame + 1);
+    crystal.energy= randomf(0, 0.9);
     crystal.type = get_random_element();
     u8 type = static_cast<u8>(crystal.type);
     crystal.pos = {pos.x, pos.y};
@@ -107,15 +110,19 @@ void game::battle::spawn_crystal(FPoint pos)
 game::battle::element_t
 game::battle::get_random_element()
 {
-    switch(random(0, 5)) {
-    default:
-    case 0: return ELECTRO;
-    case 1: return GROUND;
-    case 2: return FIRE;
-    case 3: return ICE;
-    case 4: return AIR;
-    case 5: return DARKNESS;
+    vector<element_t> available =
+        {ELECTRO, GROUND, FIRE, ICE, AIR, DARKNESS};
+
+    for(auto const& crystal : crystals) {
+        auto itr = std::find(
+            available.begin(),
+            available.end(),
+            crystal.type
+        );
+        available.erase(itr);
     }
+
+    return available[random(0, available.size() - 1)];
 }
 
 game::battle::element_t
@@ -144,9 +151,31 @@ game::battle::opposite(element_t el)
 void game::battle::tick_crystal(Crystal& obj, u32 ms)
 {
     obj.energy += obj.regeneration_rate * ms/1000;
-    if(obj.energy > 1) {
-        attack(obj);
-        obj.energy--;
+    switch(obj.type) {
+    case ELECTRO:
+    case FIRE:
+    case GROUND:
+    case AIR:
+    case DARKNESS:
+        if(obj.energy > 1) {
+            attack(obj);
+            obj.energy--;
+        }
+        break;
+    case ICE:
+        if(obj.energy > 5)
+            obj.rushing = true;
+        if(obj.rushing) {
+            obj.energy -= ms/100.0f;
+            obj.rushed_energy += ms/100.0f;
+            if(obj.rushed_energy >= 1) {
+                obj.rushed_energy--;
+                attack(obj);
+            }
+        }
+        if(obj.energy < 1)
+            obj.rushing = false;
+        break;
     }
 
     obj.frame += crystal_animation_speed * ms/1000;
@@ -154,26 +183,30 @@ void game::battle::tick_crystal(Crystal& obj, u32 ms)
         obj.frame *= -1;
 }
 
-void game::battle::spawn_bullet(Crystal const& obj,
-                                float direction)
+game::battle::Bullet*
+game::battle::spawn_bullet(Crystal const& obj,
+                           float direction)
 {
     Bullet bullet;
     bullet.pos = obj.pos;
     bullet.direction = direction;
-    if(random(1, 100) == 42) {
-        bullet.type = opposite(obj.type);
-    } else {
+    if(random(1, 10000) > 3) {
         bullet.type = obj.type;
+    } else {
+        bullet.type = opposite(obj.type);
     }
 
-    u8 type = static_cast<u8>(obj.type);
+    u8 type = static_cast<u8>(bullet.type);
     bullet.speed *= bullet_speed_factor[type];
 
     bullets.push_back(bullet);
+    return &bullets.back();
 }
 
 void game::battle::tick_bullet(Bullet& obj, u32 ms)
 {
+    obj.frame += bullet_animation_speed * ms/1000;
+
     float distance = obj.speed * ms/1000;
     obj.pos.x += cos(obj.direction) * distance;
     obj.pos.y += sin(obj.direction) * distance;

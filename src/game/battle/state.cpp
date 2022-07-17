@@ -3,14 +3,18 @@
 #include "game/board/pawn.hpp"
 #include "game/board/path.hpp"
 #include "utils/random.hpp"
+#include <iostream>
 
+using std::endl;
+using std::cout;
+using game::board::pawn;
 
 namespace game::battle {
     terrain_t terrain = FOREST;
     SDL_Texture* background = nullptr;
+    float lifetime = 15;
+    float difficulty = 40;
 }
-
-using game::board::pawn;
 
 
 void game::battle::load_battle()
@@ -23,8 +27,10 @@ void game::battle::load_battle()
     player.pos.x = size.x / 2;
     player.pos.y = size.y * 3 / 4;
     player.hp = pawn.hp;
-
-    spawn_crystals(random(1, 6));
+    lifetime = 15;
+    
+    float p = sqrt(1 / difficulty++);
+    spawn_crystals(1 + geometric_random(p) % 6);
 
     game::scene = SCENE_BATTLE;
 }

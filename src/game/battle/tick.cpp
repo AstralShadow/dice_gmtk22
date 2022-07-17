@@ -7,6 +7,10 @@
 
 void game::battle::tick(u32 ms)
 {
+    base_attack_timer += ms;
+
+    lifetime -= ms / 1000.0f;
+
     camera.tick(ms);
     tick_player(ms);
 

@@ -26,30 +26,30 @@ namespace game::battle
 
     [[maybe_unused]]
     const std::array<float, 6> regen_rates {
-        1.4, // electro
+        2.0, // electro
         0.6, // ground
-        1,   // fire
-        1,   // ice
-        1.2, // air
-        1.2  // darkness
+        1.0, // fire
+        4.0, // ice
+        0.6, // air
+        0.2  // darkness
     };
 
     [[maybe_unused]]
     const std::array<float, 6> bullet_speed_factor {
-        2, // electro
-        0.8, // ground
-        0.9,   // fire
-        1.1,   // ice
-        1.5, // air
-        0.6  // darkness
+        4.0, // electro
+        0.4, // ground
+        1.2, // fire
+        1.6, // ice
+        1.2, // air
+        0.8  // darkness
     };
 
     [[maybe_unused]]
-    const float crystal_animation_speed = 5; // fps
+    const float crystal_animation_speed = 3; // fps
     [[maybe_unused]]
-    const float healthy_crystal_frame_limiter = 0;
+    const float healthy_crystal_frame_limiter = 2;
     [[maybe_unused]]
-    const float bullet_animation_speed = 5; // fps
+    const float bullet_animation_speed = 10; // fps
 
 
     struct Crystal
@@ -64,6 +64,8 @@ namespace game::battle
 
         float energy = 0; // used for attacks
         float regeneration_rate = 0.7; // en/s
+        bool rushing = false; // used for salvo attacks
+        float rushed_energy = 0;
     };
 
     struct Bullet
@@ -72,7 +74,8 @@ namespace game::battle
         float frame = 0;
 
         FPoint pos;
-        float speed = 500; //px/s
+        float speed = 150; //px/s
+        float lifetime = 10; // used for darkness
 
         float direction = 0;
     };
@@ -80,6 +83,7 @@ namespace game::battle
 
     extern vector<Crystal> crystals;
     extern vector<Bullet> bullets;
+    extern u32 base_attack_timer; // used when generating starting direction for multidirection attacks
 
     SDL_Rect get_frame(Crystal const&);
     SDL_Rect get_frame(Bullet const&);
@@ -90,7 +94,8 @@ namespace game::battle
     element_t opposite(element_t);
 
     void attack(Crystal&);
-    void spawn_bullet(Crystal const&, float direction);
+    Bullet* spawn_bullet(Crystal const&,
+                         float direction);
 }
 
 namespace game

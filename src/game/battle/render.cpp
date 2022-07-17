@@ -7,6 +7,10 @@
 #include "core/core.hpp"
 #include <SDL2/SDL_render.h>
 #include <cmath>
+#include <iostream>
+
+using std::cout;
+using std::endl;
 
 static auto& rnd = core::renderer;
 
@@ -61,18 +65,19 @@ void game::battle::render_bullet(Bullet const& obj)
     SDL_Rect src = get_frame(obj);
 
     SDL_Rect dst {
-        static_cast<int>(obj.pos.x),
-        static_cast<int>(obj.pos.y),
-        src.w, src.h
+        static_cast<int>(obj.pos.x) + src.w / 6,
+        static_cast<int>(obj.pos.y) + src.h / 6,
+        src.w * 2 / 3, src.h * 2 / 3
     };
 
-    render_entity(tx, &src, &dst);
+    render_entity(tx, &src, &dst, obj.direction);
 }
 
 
 void game::battle::render_entity(SDL_Texture* tx,
                                  SDL_Rect const* src,
-                                 SDL_Rect const* dst)
+                                 SDL_Rect const* dst,
+                                 float rotation)
 {
     auto screen = camera.size;
     auto arena = texture_size(terrain);
@@ -88,7 +93,19 @@ void game::battle::render_entity(SDL_Texture* tx,
     if(screen.y > arena.y)
         out.y = dst->y + (screen.y - arena.y) / 2;
 
-    SDL_RenderCopy(rnd, tx, src, &out);
+    if(rotation == 0) {
+        SDL_RenderCopy(rnd, tx, src, &out);
+        return;
+    }
+
+    Point center = {
+        out.w / 2,
+        out.h / 2
+    };
+
+    float angle = 180 * rotation / 3.1415;
+    SDL_RenderCopyEx(rnd, tx, src, &out,
+                     angle, &center, SDL_FLIP_NONE);
 }
 
 
