@@ -5,6 +5,7 @@
 #include <SDL2/SDL_events.h>
 #include <cmath>
 #include <iostream>
+#include "utils/random.hpp"
 
 using std::cout;
 using std::endl;
@@ -60,6 +61,17 @@ void game::battle::tick_player(u32 ms)
         player.pos.y += motion.y * speed;
     }
 
+    if(player.shield > 0)
+        player.shield -= ms/1000.0f;
+    if(player.heal_cooldown > 0)
+        player.heal_cooldown -= ms/1000.0f;
+    if(player.slow_motion > 0)
+        player.slow_motion -= ms/1000.0f;
+    if(player.time_halt > 0)
+        player.time_halt -= ms/1000.0f;
+    if(player.backfire_cooldown > 0)
+        player.backfire_cooldown -= ms/1000.0f;
+
     
     auto arena = texture_size(terrain);
     auto size = texture_size(player);
@@ -92,14 +104,51 @@ void game::battle::tick_player(u32 ms)
     }
 }
 
+
+void game::battle::player_skill(float direction)
+{
+    if(player.energy < 1) return;
+    player.energy--;
+
+    if(player.r_time > 0) return;
+    if(player.shield > 0) return;
+    if(player.heal_cooldown > 0) return;
+    if(player.time_halt > 0) return;
+    if(player.slow_motion > 0) return;
+
+    switch(random(0, 5)) {
+    case 0:
+        player_rush(direction);
+        break;
+    case 1:
+        player.shield += 1.5;
+        break;
+    case 2:
+        if(player.hp < 5) {
+            player.hp++;
+            player.heal_cooldown += 1;
+        } else {
+            player.shield += 1.5;
+        }
+        break;
+    case 3:
+        player.slow_motion += 3;
+        break;
+    case 4:
+        player.time_halt += 2;
+        break;
+    case 5:
+        lifetime += 3;
+        player.backfire_cooldown += 1;
+        break;
+    }
+}
+
+
 void game::battle::player_rush(float direction)
 {
-    if(player.r_time > 0) return;
-    if(player.energy < 1) return;
-
     player.r_direction = direction;
     player.r_time = player.r_duration;
-    player.energy--;
 }
 
 void game::battle::tick_player_rush(u32 ms)

@@ -15,6 +15,7 @@ void game::battle::render_hud()
 {
     render_energy();
     render_lifetime();
+    render_active_skills();
 }
 
 void game::battle::render_energy()
@@ -78,4 +79,36 @@ void game::battle::render_lifetime()
 
     SDL_RenderCopy(rnd, full, &src, &dst);
 
+}
+
+void game::battle::render_active_skills()
+{
+    SDL_Texture* tx = nullptr;
+    if(player.shield > 0)
+        tx = texture(TX_HUD "shield.png");
+    if(player.heal_cooldown > 0)
+        tx = texture(TX_HUD "heal.png");
+    if(player.r_time > 0)
+        tx = texture(TX_HUD "speed.png");
+    if(player.backfire_cooldown > 0)
+        tx = texture(TX_HUD "add_evil_live.png");
+    if(player.slow_motion > 0)
+        tx = texture(TX_HUD "slowmo.png");
+    if(player.time_halt > 0)
+        tx = texture(TX_HUD "freeze.png");
+    if(tx == nullptr)
+        return;
+
+    auto size = texture_size(TX_HUD "heal.png");
+
+    auto screen = camera.size;
+
+    SDL_Rect dst {
+        screen.x / 2 - size.x / 2,
+        screen.y - size.y - 24,
+        size.x,
+        size.y
+    };
+
+    SDL_RenderCopy(rnd, tx, nullptr, &dst);
 }

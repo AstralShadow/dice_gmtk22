@@ -26,6 +26,9 @@ namespace game
         TX_PLAYER "yellow.png",
         TX_PLAYER "orange.png",
         TX_PLAYER "red.png",
+        TX_PLAYER "green.png",
+        TX_PLAYER "cyan.png",
+        TX_PLAYER "shield.png",
 #define TX_PAWN "assets/pawn/"
         TX_PAWN "lime.png",
         TX_PAWN "yellow.png",
@@ -60,6 +63,13 @@ namespace game
         HUD_PROGRESS_FULL,
 #define HUD_PROGRESS_EMPTY "assets/hud/progress_bar_empty.png"
         HUD_PROGRESS_EMPTY,
+#define TX_HUD "assets/hud/"
+        TX_HUD "shield.png",
+        TX_HUD "speed.png",
+        TX_HUD "heal.png",
+        TX_HUD "freeze.png",
+        TX_HUD "slowmo.png",
+        TX_HUD "add_evil_live.png",
 
 #define TX_STORY "assets/story/"
         TX_STORY "background.png",

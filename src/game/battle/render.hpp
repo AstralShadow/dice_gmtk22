@@ -26,6 +26,7 @@ namespace game::battle
     void render_hud();
     void render_energy();
     void render_lifetime();
+    void render_active_skills();
 
     /** Transforms sceen coordinate to game coordinate */
     FPoint localize(FPoint);

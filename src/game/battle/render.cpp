@@ -1,5 +1,6 @@
 #include "game/game.hpp"
 #include "game/camera.hpp"
+#include "game/textures.hpp"
 #include "game/battle/state.hpp"
 #include "game/battle/render.hpp"
 #include "game/battle/player.hpp"
@@ -43,6 +44,10 @@ void game::battle::render_player()
     };
 
     render_entity(tx, nullptr, &area);
+
+    auto shield = texture(TX_PLAYER "shield.png");
+    if(player.shield > 0)
+        render_entity(shield, nullptr, &area);
 }
 
 void game::battle::render_crystal(Crystal const& obj)

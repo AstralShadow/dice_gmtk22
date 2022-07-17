@@ -23,14 +23,23 @@ void game::battle::tick(u32 ms)
     camera.tick(ms);
     tick_player(ms);
 
-    for(auto& crystal : crystals)
-        tick_crystal(crystal, ms);
+    u32 enemy_ms = ms;
+    if(player.time_halt > 0)
+        enemy_ms = 0;
+    if(player.slow_motion > 0)
+        enemy_ms = ms / 2;
 
+    if(enemy_ms > 0)
+    for(auto& crystal : crystals)
+        tick_crystal(crystal, enemy_ms);
+
+    if(enemy_ms > 0)
     for(auto& bullet : bullets)
-        tick_bullet(bullet, ms);
+        tick_bullet(bullet, enemy_ms);
 
     bullet_collisions(ms);
-    player_collisions(ms);
+    if(player.shield <= 0)
+        player_collisions(ms);
 }
 
 

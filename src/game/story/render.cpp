@@ -13,9 +13,7 @@ auto& rnd = core::renderer;
 
 void game::story::render()
 {
-    cout << "access " << playing << ':' << frame << endl;
     string name = scenes[playing][frame];
-    cout << "name = " << name << endl;
     auto bg = texture(TX_STORY "background.png");
     auto tx = texture(name);
     

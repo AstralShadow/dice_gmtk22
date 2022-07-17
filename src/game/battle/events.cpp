@@ -27,7 +27,7 @@ void game::battle::lclick(u32 x, u32 y)
         static_cast<int>(pos.x - player.pos.x)
     );
 
-    player_rush(angle);
+    player_skill(angle);
 }
 
 void game::battle::rclick(u32, u32)

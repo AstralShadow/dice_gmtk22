@@ -15,6 +15,12 @@ namespace game::battle
 
         float speed = 300; // px/s
 
+        float shield = 0; // seconds
+        float heal_cooldown = 0; // seconds
+        float slow_motion = 0;
+        float time_halt = 0;
+        float backfire_cooldown = 0;
+
         /* Energy */
         float energy = 3;
         float energy_limit = 5;
@@ -29,6 +35,7 @@ namespace game::battle
 
     extern Player player;
 
+    void player_skill(float direction);
     void player_rush(float direction);
 }
 

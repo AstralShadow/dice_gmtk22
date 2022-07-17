@@ -94,6 +94,10 @@ Point game::texture_size(terrain_t biome)
 SDL_Texture* game::texture(battle::Player const& player)
 {
     switch(player.hp) {
+    case 5:
+        return texture(TX_PLAYER "cyan.png");
+    case 4:
+        return texture(TX_PLAYER "green.png");
     case 3:
         return texture(TX_PLAYER "lime.png");
     case 2:
@@ -110,6 +114,10 @@ SDL_Texture* game::texture(battle::Player const& player)
 Point game::texture_size(battle::Player const& player)
 {
     switch(player.hp) {
+    case 5:
+        return texture_size(TX_PLAYER "cyan.png");
+    case 4:
+        return texture_size(TX_PLAYER "green.png");
     case 3:
         return texture_size(TX_PLAYER "lime.png");
     case 2:
