@@ -19,6 +19,9 @@ namespace game::battle {
 
 void game::battle::load_battle()
 {
+    crystals.clear();
+    bullets.clear();
+
     terrain = game::board::path_biome(pawn.progress);
     background = texture(terrain);
     auto size = texture_size(terrain);

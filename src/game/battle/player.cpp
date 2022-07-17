@@ -69,6 +69,9 @@ void game::battle::tick_player(u32 ms)
         player.pos.x = arena.x - 30 - size.x;
     if(player.pos.y > arena.y - 30 - size.y)
         player.pos.y = arena.y - 30 - size.y;
+
+    auto obstacles = terrain_obstacles
+        [static_cast<u8>(terrain)];
 }
 
 void game::battle::player_rush(float direction)

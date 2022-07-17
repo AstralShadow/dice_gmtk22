@@ -24,6 +24,8 @@ namespace game::battle
 
     void load_battle();
     void unload_battle();
+
+    void game_over();
 }
 
 #endif // INCLUDE_STATE_HPP

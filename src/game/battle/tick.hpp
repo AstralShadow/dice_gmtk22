@@ -15,6 +15,7 @@ namespace game::battle
     void tick_crystal(Crystal&, u32);
     void tick_bullet(Bullet&, u32);
     void player_collisions(u32);
+    void bullet_collisions(u32);
 }
 
 #endif // INCLUDE_TICK_HPP

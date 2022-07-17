@@ -15,7 +15,6 @@ void game::battle::tick(u32 ms)
     base_attack_timer += ms;
 
     lifetime -= ms / 1000.0f;
-    cout << lifetime << endl;
 
     camera.tick(ms);
     tick_player(ms);
@@ -26,6 +25,7 @@ void game::battle::tick(u32 ms)
     for(auto& bullet : bullets)
         tick_bullet(bullet, ms);
 
+    bullet_collisions(ms);
     player_collisions(ms);
 }
 

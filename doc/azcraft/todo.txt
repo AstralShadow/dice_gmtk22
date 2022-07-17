@@ -6,8 +6,9 @@
 2022-07-17 crystal entrance scene
 2022-07-17 crystal destruction scene
 2022-07-17 crystal movement
-2022-07-17 collisions
 2022-07-17 more player skills
+2022-07-17 player collision with obstacles
+2022-07-17 story mode
 x 2022-07-15 2022-07-15 plan basic game design timer:0h-11m-27s
 x 2022-07-15 2022-07-15 define graphic formats timer:0h-3m-48s
 x 2022-07-15 2022-07-15 prepare engine timer:0h-23m-27s
@@ -36,3 +37,4 @@ x 2022-07-17 2022-07-17 hud level progress timer:0h-19m-42s
 x 2022-07-17 2022-07-15 different attack models
 x 2022-07-17 2022-07-15 the dice
 x 2022-07-17 2022-07-16 move pawn accorgind map path timer:0h-16m-17s
+x 2022-07-17 2022-07-17 collisions timer:1h-1m-8s

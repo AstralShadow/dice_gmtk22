@@ -1,4 +1,5 @@
 #include "game/battle/crystal.hpp"
+#include "game/battle/state.hpp"
 #include "game/battle/tick.hpp"
 #include "game/camera.hpp"
 #include "utils/random.hpp"
@@ -47,10 +48,10 @@ get_frame(Bullet const& obj)
 
 void game::battle::spawn_crystals(u8 count)
 {
-    auto screen = camera.size;
+    auto arena = texture_size(terrain);
     FPoint spawn {
-        screen.x / 2.0f,
-        screen.y / 4.0f
+        arena.x / 2.0f - 50,
+        arena.y / 4.0f
     };
 
     auto [x, y] = spawn;
@@ -206,6 +207,23 @@ game::battle::spawn_bullet(Crystal const& obj,
 void game::battle::tick_bullet(Bullet& obj, u32 ms)
 {
     obj.frame += bullet_animation_speed * ms/1000;
+
+    if(obj.type == DARKNESS) {
+
+        auto player_size = texture_size(player);
+        FPoint target = {
+            player.pos.x + player_size.x / 2,
+            player.pos.y + player_size.y * 2 / 3
+        };
+        FPoint source = {
+            obj.pos.x + 50,
+            obj.pos.y + 50
+        };
+
+        auto dx = target.x - source.x;
+        auto dy = target.y - source.y;
+        obj.direction = std::atan2(dy, dx);
+    }
 
     float distance = obj.speed * ms/1000;
     obj.pos.x += cos(obj.direction) * distance;
