@@ -14,7 +14,7 @@ namespace game
         Point size {0, 0};
         float scale = 1.0f;
 
-        float speed = 20; // px/s
+        float speed = 50; // px/s
 
         void tick(u32 ms);
     };

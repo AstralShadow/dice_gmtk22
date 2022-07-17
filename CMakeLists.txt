@@ -13,6 +13,7 @@ FILE(GLOB SOURCES
         src/game/menu/*.cpp
         src/game/board/*.cpp
         src/game/battle/*.cpp
+        src/game/story/*.cpp
 )
 include_directories(${PROJECT_NAME} src)
 add_executable(${PROJECT_NAME} ${SOURCES})
@@ -50,7 +51,7 @@ target_compile_options(${PROJECT_NAME} PRIVATE
         -Wextra
         -pedantic
         -Werror
-        #-Og -g
+        #-g
         -O2
 )
 

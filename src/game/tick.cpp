@@ -20,5 +20,9 @@ void game::tick(u32 ms)
     case SCENE_BATTLE:
         battle::tick(ms);
         break;
+
+    case SCENE_STORY:
+        story::tick(ms);
+        break;
     }
 }

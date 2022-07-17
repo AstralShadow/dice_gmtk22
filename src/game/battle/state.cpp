@@ -1,5 +1,6 @@
 #include "game/data.hpp"
 #include "game/battle/state.hpp"
+#include "game/story/scenes.hpp"
 #include "game/board/pawn.hpp"
 #include "game/board/path.hpp"
 #include "utils/random.hpp"
@@ -35,7 +36,7 @@ void game::battle::load_battle()
     float p = sqrt(1 / difficulty++);
     spawn_crystals(1 + geometric_random(p) % 6);
 
-    game::scene = SCENE_BATTLE;
+    story::single(story::STORY_START, SCENE_BATTLE);
 }
 
 void game::battle::unload_battle()

@@ -19,7 +19,7 @@ using std::vector;
 
 namespace game
 {
-    scene_t scene = SCENE_BOARD;
+    scene_t scene;
     vector<SDL_Surface*> surfaces;
     vector<SDL_Texture*> textures;
 
@@ -31,6 +31,10 @@ namespace game
 void game::init(int, char**)
 {
     load_textures();
+    battle::camera.speed = 100;
+
+    //story::play(0, SCENE_BOARD);
+    battle::load_battle();
 }
 
 void game::load_textures()

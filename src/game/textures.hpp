@@ -60,6 +60,30 @@ namespace game
         HUD_PROGRESS_FULL,
 #define HUD_PROGRESS_EMPTY "assets/hud/progress_bar_empty.png"
         HUD_PROGRESS_EMPTY,
+
+#define TX_STORY "assets/story/"
+        TX_STORY "background.png",
+
+        TX_STORY "title.png",
+        TX_STORY "intro/1.png",
+        TX_STORY "intro/2.png",
+        TX_STORY "intro/3.png",
+        TX_STORY "intro/4.png",
+        TX_STORY "intro/5.png",
+        TX_STORY "intro/6.png",
+        TX_STORY "intro/7.png",
+        TX_STORY "intro/8.png",
+        TX_STORY "intro/9.png",
+        TX_STORY "intro/10.png",
+        TX_STORY "intro/11.png",
+        TX_STORY "intro/12.png",
+
+        TX_STORY "start_game/1.png",
+        TX_STORY "start_game/2.png",
+        TX_STORY "start_game/3.png",
+
+        TX_STORY "gameover/1.png",
+        TX_STORY "gameover/2.png",
     };
 
     extern std::vector<SDL_Surface*> surfaces;

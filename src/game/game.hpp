@@ -33,6 +33,12 @@ namespace game
         void lclick(u32 x, u32 y);
     }
 
+    namespace story {
+        void tick(u32);
+        void render();
+    }
+
+
     template<typename T>
     extern void handle_event(T&);
 

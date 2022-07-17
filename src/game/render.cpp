@@ -29,6 +29,10 @@ void game::render()
     case SCENE_BATTLE:
         battle::render();
         break;
+
+    case SCENE_STORY:
+        story::render();
+        break;
     }
 
     SDL_RenderPresent(core::renderer);
