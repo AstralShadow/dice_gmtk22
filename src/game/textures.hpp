@@ -31,13 +31,30 @@ namespace game
         TX_PAWN "yellow.png",
         TX_PAWN "orange.png",
         TX_PAWN "red.png",
+
         "assets/arena/forest.png",
         "assets/arena/meadow.png",
         "assets/arena/beach.png",
+
 #define HUD_DICE "assets/hud/dice.png"
         HUD_DICE,
 #define HUD_DICE_EMPTY "assets/hud/dice_empty.png"
-        HUD_DICE_EMPTY
+        HUD_DICE_EMPTY,
+
+#define TX_CRYSTAL "assets/crystals/"
+        TX_CRYSTAL "air.png",
+        TX_CRYSTAL "electro.png",
+        TX_CRYSTAL "ground.png",
+        TX_CRYSTAL "darkness.png",
+        TX_CRYSTAL "fire.png",
+        TX_CRYSTAL "ice.png",
+#define TX_BULLET "assets/bullets/"
+        TX_BULLET "air.png",
+        TX_BULLET "electro.png",
+        TX_BULLET "ground.png",
+        TX_BULLET "darkness.png",
+        TX_BULLET "fire.png",
+        TX_BULLET "ice.png",
     };
 
     extern std::vector<SDL_Surface*> surfaces;

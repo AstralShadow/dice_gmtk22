@@ -5,6 +5,7 @@
 #include "utils/point.hpp"
 #include "game/terrain.hpp"
 #include "game/battle/player.hpp"
+#include "game/battle/crystal.hpp"
 
 struct SDL_Texture;
 
@@ -15,6 +16,8 @@ namespace game::battle
 
     extern terrain_t terrain;
     extern SDL_Texture* background;
+
+    extern float lifetime; // level timer
 
     void load_battle();
     void unload_battle();

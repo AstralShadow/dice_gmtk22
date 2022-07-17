@@ -2,6 +2,7 @@
 #include "game/battle/state.hpp"
 #include "game/board/pawn.hpp"
 #include "game/board/path.hpp"
+#include "utils/random.hpp"
 
 
 namespace game::battle {
@@ -22,6 +23,8 @@ void game::battle::load_battle()
     player.pos.x = size.x / 2;
     player.pos.y = size.y * 3 / 4;
     player.hp = pawn.hp;
+
+    spawn_crystals(random(1, 6));
 
     game::scene = SCENE_BATTLE;
 }

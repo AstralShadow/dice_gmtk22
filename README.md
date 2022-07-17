@@ -1,6 +1,9 @@
-A game about dice
+A bullet-hell game about luck and gambling
 
-## The Game Jam
+## Uploaded at itch.io
+https://azcraft.itch.io/gamblers-odysee
+
+## Submission for GMTK Game Jam
 https://itch.io/jam/gmtk-jam-2022
 
 ## Building
@@ -15,5 +18,4 @@ You basicly want to do:
     cp -r ../assets .
     ./dice
 
-That would lead to nothing because this commit
-contains only the engine.
+Current version is still a bit unpleyable.

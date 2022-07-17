@@ -6,8 +6,16 @@
 2022-07-16 smooth camera motion
 2022-07-16 implement path as beizer curves
 2022-07-16 git commit messages timer:0h-14m-23s
-2022-07-16 crystal entities timer:0h-5m-0s
 2022-07-16 player attack?
+2022-07-17 crystal entrance scene
+2022-07-17 crystal animations
+2022-07-17 crystal destruction scene
+2022-07-17 attack patterns timer:0h-38m-54s
+2022-07-17 crystal movement
+2022-07-17 bullet motion
+2022-07-17 collisions
+2022-07-17 bullet animation
+2022-07-17 more player skills
 x 2022-07-15 2022-07-15 plan basic game design timer:0h-11m-27s
 x 2022-07-15 2022-07-15 define graphic formats timer:0h-3m-48s
 x 2022-07-15 2022-07-15 prepare engine timer:0h-23m-27s
@@ -27,3 +35,4 @@ x 2022-07-16 2022-07-16 render entities timer:0h-44m-55s
 x 2022-07-16 2022-07-16 player controls timer:0h-30m-3s
 x 2022-07-16 2022-07-16 player rush timer:0h-24m-7s
 x 2022-07-17 2022-07-17 hud timer:0h-22m-1s
+x 2022-07-17 2022-07-16 crystal entities timer:1h-26m-8s

@@ -2,6 +2,7 @@
 #include "game/textures.hpp"
 #include "game/terrain.hpp"
 #include "game/battle/player.hpp"
+#include "game/battle/crystal.hpp"
 #include <string>
 #include <iostream>
 #include <SDL_render.h>
@@ -119,5 +120,85 @@ Point game::texture_size(battle::Player const& player)
         return texture_size(TX_PLAYER "red.png");
     }
 
+    return {0, 0};
+}
+
+
+SDL_Texture* game::texture(battle::Crystal const& obj)
+{
+    switch(obj.type) {
+    case battle::ELECTRO:
+        return texture(TX_CRYSTAL "electro.png");
+    case battle::GROUND:
+        return texture(TX_CRYSTAL "ground.png");
+    case battle::FIRE:
+        return texture(TX_CRYSTAL "fire.png");
+    case battle::ICE:
+        return texture(TX_CRYSTAL "ice.png");
+    case battle::AIR:
+        return texture(TX_CRYSTAL "air.png");
+    case battle::DARKNESS:
+        return texture(TX_CRYSTAL "darkness.png");
+    }
+
+    return nullptr;
+}
+
+Point game::texture_size(battle::Crystal const& obj)
+{
+    switch(obj.type) {
+    case battle::ELECTRO:
+        return texture_size(TX_CRYSTAL "electro.png");
+    case battle::GROUND:
+        return texture_size(TX_CRYSTAL "ground.png");
+    case battle::FIRE:
+        return texture_size(TX_CRYSTAL "fire.png");
+    case battle::ICE:
+        return texture_size(TX_CRYSTAL "ice.png");
+    case battle::AIR:
+        return texture_size(TX_CRYSTAL "air.png");
+    case battle::DARKNESS:
+        return texture_size(TX_CRYSTAL "darkness.png");
+    }
+    return {0, 0};
+}
+
+
+SDL_Texture* game::texture(battle::Bullet const& obj)
+{
+    switch(obj.type) {
+    case battle::ELECTRO:
+        return texture(TX_BULLET "electro.png");
+    case battle::GROUND:
+        return texture(TX_BULLET "ground.png");
+    case battle::FIRE:
+        return texture(TX_BULLET "fire.png");
+    case battle::ICE:
+        return texture(TX_BULLET "ice.png");
+    case battle::AIR:
+        return texture(TX_BULLET "air.png");
+    case battle::DARKNESS:
+        return texture(TX_BULLET "darkness.png");
+    }
+
+    return nullptr;
+}
+
+Point game::texture_size(battle::Bullet const& obj)
+{
+    switch(obj.type) {
+    case battle::ELECTRO:
+        return texture_size(TX_BULLET "electro.png");
+    case battle::GROUND:
+        return texture_size(TX_BULLET "ground.png");
+    case battle::FIRE:
+        return texture_size(TX_BULLET "fire.png");
+    case battle::ICE:
+        return texture_size(TX_BULLET "ice.png");
+    case battle::AIR:
+        return texture_size(TX_BULLET "air.png");
+    case battle::DARKNESS:
+        return texture_size(TX_BULLET "darkness.png");
+    }
     return {0, 0};
 }
