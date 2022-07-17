@@ -5,7 +5,7 @@
 2022-07-17 crystal destruction scene
 2022-07-17 crystal movement
 2022-07-17 altar
-2022-07-17 compile for win32
+2022-07-17 compile for win32 timer:0h-3m-0s
 x 2022-07-15 2022-07-15 plan basic game design timer:0h-11m-27s
 x 2022-07-15 2022-07-15 define graphic formats timer:0h-3m-48s
 x 2022-07-15 2022-07-15 prepare engine timer:0h-23m-27s

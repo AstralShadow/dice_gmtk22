@@ -31,7 +31,8 @@ namespace game
 void game::init(int, char**)
 {
     load_textures();
-    battle::camera.speed = 100;
+    battle::camera.speed = 500;
+    board::camera.speed = 100;
 
     story::play(0, SCENE_BOARD);
     //battle::load_battle();

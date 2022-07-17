@@ -33,9 +33,12 @@ void game::board::tick(u32 ms)
             pawn.hp++;
     }
 
-    for(float pos : encounters)
+    for(float pos : encounters) {
         if(old_p < pos && pos < pawn.progress)
             battle::load_battle();
+        if(old_p > pos && pos > pawn.progress)
+            battle::load_battle();
+    }
     
     if(pawn.progress > 1) {
         pawn.progress = -1;
