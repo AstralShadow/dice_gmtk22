@@ -1,8 +1,8 @@
-2022-07-16 create steps on path timer:0h-9m-14s
+2022-07-16 create steps on path timer:0h-49m-40s
 2022-07-16 animated players
 2022-07-16 smooth camera motion
 2022-07-16 implement path as beizer curves timer:0h-0m-1s
-2022-07-16 git commit messages timer:0h-14m-23s
+2022-07-16 git commit messages timer:0h-15m-19s
 2022-07-17 crystal entrance scene
 2022-07-17 crystal destruction scene
 2022-07-17 crystal movement

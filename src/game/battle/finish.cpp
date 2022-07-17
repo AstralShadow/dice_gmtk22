@@ -12,3 +12,8 @@ void game::battle::game_over()
     cout << "Game over" << endl;
     load_battle();
 }
+
+void game::battle::win_round()
+{
+    unload_battle();
+}

@@ -13,7 +13,7 @@ namespace game::battle {
     terrain_t terrain = FOREST;
     SDL_Texture* background = nullptr;
     float lifetime = 15;
-    float difficulty = 40;
+    float difficulty = 1;
 }
 
 
@@ -40,6 +40,6 @@ void game::battle::load_battle()
 
 void game::battle::unload_battle()
 {
-    pawn.hp = player.hp;
+    pawn.hp = std::min(player.hp, 3);
     game::scene = SCENE_BOARD;
 }

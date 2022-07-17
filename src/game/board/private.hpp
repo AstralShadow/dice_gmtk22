@@ -19,6 +19,10 @@ namespace game::board
     void calculate_map_size();
     SDL_Texture* map_cache();
     Point cover(Point source, Point output);
+
+
+    extern vector<float> encounters;
+    void init_encounters();
 }
 
 #endif // INCLUDE_PRIVATE_BOARD_HPP

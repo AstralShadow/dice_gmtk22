@@ -15,6 +15,10 @@ void game::battle::tick(u32 ms)
     base_attack_timer += ms;
 
     lifetime -= ms / 1000.0f;
+    if(lifetime < 0) {
+        win_round();
+        return;
+    }
 
     camera.tick(ms);
     tick_player(ms);

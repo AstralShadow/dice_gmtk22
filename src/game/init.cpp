@@ -31,7 +31,6 @@ namespace game
 void game::init(int, char**)
 {
     load_textures();
-    battle::load_battle();
 }
 
 void game::load_textures()

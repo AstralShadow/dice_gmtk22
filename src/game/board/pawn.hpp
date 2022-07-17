@@ -11,8 +11,9 @@ namespace game::board
 {
     struct Pawn
     {
-        float progress = 0.87;
+        float progress = 0;
         int hp = 3;
+        float regen_buffer = 0;
     };
 
     extern Pawn pawn;

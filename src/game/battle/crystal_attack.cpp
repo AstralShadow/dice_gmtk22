@@ -38,8 +38,8 @@ void attack_tpl<ELECTRO>(Crystal& obj)
 template<>
 void attack_tpl<GROUND>(Crystal& obj)
 {
-    float angle = (base_attack_timer / 1000) / 2.0f;
     float pi = 3.1415;
+    float angle = randomf(0, pi*2);
     int count = 3;
     for(u8 i = 0; i < count; ++i) {
         angle += pi * 2 / count;

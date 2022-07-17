@@ -7,14 +7,19 @@
 using core::renderer;
 using game::Camera;
 
-
-void Camera::tick(u32)
+void Camera::tick(u32 ms)
 {
-    //auto dx = target_pos.x - pos.x;
-    //auto dy = target_pos.y - pos.y;
+    auto dx = target_pos.x - pos.x;
+    auto dy = target_pos.y - pos.y;
 
-    pos.x = target_pos.x;
-    pos.y = target_pos.y;
+    auto angle = std::atan2(dy, dx);
+    auto distance = std::hypot(dx, dy);
+    
+    auto step = speed * ms/1000;
+    distance = std::min(distance, step);
+
+    pos.x += cos(angle) * distance;
+    pos.y += sin(angle) * distance;
 }
 
 void game::cameras_to_screen_size()

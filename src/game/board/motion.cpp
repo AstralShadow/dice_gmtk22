@@ -1,6 +1,14 @@
 #include "game/game.hpp"
 #include "game/camera.hpp"
 #include "game/board/private.hpp"
+#include "game/board/pawn.hpp"
+#include "game/board/path.hpp"
+#include "game/textures.hpp"
+#include <iostream>
+
+using std::cout;
+using std::endl;
+
 
 void game::board::motion(u32 x, u32 y)
 {

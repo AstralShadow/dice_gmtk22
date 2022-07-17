@@ -18,4 +18,4 @@ You basicly want to do:
     cp -r ../assets .
     ./dice
 
-Current version is still a bit unpleyable.
+Current version is an alpha version.

@@ -27,7 +27,7 @@ namespace game::battle
     [[maybe_unused]]
     const std::array<float, 6> regen_rates {
         2.0, // electro
-        0.6, // ground
+        1.2, // ground
         1.0, // fire
         4.0, // ice
         0.6, // air

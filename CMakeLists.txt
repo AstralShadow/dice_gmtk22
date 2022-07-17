@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.22.2)
 
-project(dice VERSION 1.0)
+project(gambler_odyssey VERSION 1.0)
 
 
 ### SOURCES ###
