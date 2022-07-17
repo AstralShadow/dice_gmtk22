@@ -72,6 +72,24 @@ void game::battle::tick_player(u32 ms)
 
     auto obstacles = terrain_obstacles
         [static_cast<u8>(terrain)];
+    auto pradius = size.y / 3;
+
+    for(auto obstacle : obstacles) {
+        auto dx = player.pos.x + size.x / 2
+                     - obstacle.pos.x;
+        auto dy = player.pos.y + size.y / 2
+                     - obstacle.pos.y;
+
+        auto range = pradius + obstacle.radius;
+        auto distance = std::hypot(dx, dy);
+        auto rest = range - distance;
+
+        if(rest > 0) {
+            auto direction = std::atan2(dy, dx);
+            player.pos.x += cos(direction) * rest;
+            player.pos.y += sin(direction) * rest;
+        }
+    }
 }
 
 void game::battle::player_rush(float direction)
