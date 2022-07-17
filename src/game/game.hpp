@@ -36,6 +36,7 @@ namespace game
     namespace story {
         void tick(u32);
         void render();
+        void click();
     }
 
 

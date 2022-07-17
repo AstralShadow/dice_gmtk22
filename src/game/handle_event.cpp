@@ -33,6 +33,9 @@ void game::handle_event(SDL_MouseButtonEvent& ev)
         if(ev.button == SDL_BUTTON_RIGHT)
             battle::rclick(ev.x, ev.y);
         break;
+    case SCENE_STORY:
+        story::click();
+        break;
     default:
         break;
     }
