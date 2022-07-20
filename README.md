@@ -4,10 +4,9 @@ A bullet-hell game about luck and gambling
 https://azcraft.itch.io/gamblers-odysee
 
 ## Submission for GMTK Game Jam
-https://itch.io/jam/gmtk-jam-2022
+https://itch.io/jam/gmtk-jam-2022/rate/1617867
 
 ## Building
-You basicly want to do:
 
     git clone https://github.com/AstralShadow/dice_gmtk22
     cd dice_gmtk22
@@ -16,6 +15,6 @@ You basicly want to do:
     cmake ..
     make -j$(nproc)
     cp -r ../assets .
-    ./dice
+    ./gambler_odyssey
 
-Current version is an alpha version.
+Current version is still a beta

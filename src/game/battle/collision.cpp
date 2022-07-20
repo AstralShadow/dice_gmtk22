@@ -9,7 +9,7 @@
 void game::battle::player_collisions(u32)
 {
     auto psize = texture_size(player);
-    FPoint bsize {66, 66};
+    FPoint bsize {100, 100};
 
     FPoint p1 {
         player.pos.x + psize.x / 2,

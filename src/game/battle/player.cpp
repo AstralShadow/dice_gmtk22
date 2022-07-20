@@ -108,13 +108,14 @@ void game::battle::tick_player(u32 ms)
 void game::battle::player_skill(float direction)
 {
     if(player.energy < 1) return;
-    player.energy--;
 
     if(player.r_time > 0) return;
     if(player.shield > 0) return;
     if(player.heal_cooldown > 0) return;
     if(player.time_halt > 0) return;
     if(player.slow_motion > 0) return;
+
+    player.energy--;
 
     switch(random(0, 5)) {
     case 0:
