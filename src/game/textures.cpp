@@ -5,7 +5,7 @@
 #include "game/battle/crystal.hpp"
 #include <string>
 #include <iostream>
-#include <SDL_render.h>
+#include <SDL2/SDL_render.h>
 
 using std::string;
 using std::cout;

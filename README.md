@@ -6,7 +6,7 @@ https://azcraft.itch.io/gamblers-odysee
 ## Submission for GMTK Game Jam
 https://itch.io/jam/gmtk-jam-2022/rate/1617867
 
-## Building
+## Building (CMake)
 
     git clone https://github.com/AstralShadow/dice_gmtk22
     cd dice_gmtk22
@@ -17,4 +17,12 @@ https://itch.io/jam/gmtk-jam-2022/rate/1617867
     cp -r ../assets .
     ./gambler_odyssey
 
-Current version is still a beta
+## Building (makefile)
+Dependencies: SDL2 SDL2\_image
+
+    git clone https://github.com/AstralShadow/dice_gmtk22
+    cd dice_gmtk22
+    make -j$(nproc)
+    make run
+
+Currently the game is still a beta version.

@@ -1,4 +1,4 @@
-#include <SDL_events.h>
+#include <SDL2/SDL_events.h>
 #include "game/game.hpp"
 #include "game/battle/player.hpp"
 #include "game/battle/render.hpp"
